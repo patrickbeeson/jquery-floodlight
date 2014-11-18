@@ -1,10 +1,3 @@
-// $('#a').floodlightTag({
-//   src: '1234567',
-//   type: 'foo',
-//   cat: 'bar',
-//   return_false: true
-// });
-
 ;(function ( $, window, undefined ) {
 
   var pluginName = 'floodlightTag',
@@ -46,14 +39,14 @@
 
       $elem.on({
         click: function() {
-          $('body').append('<iframe src="https://ad.doubleclick.net/activity;src=' + self.options.src + ';type=' + self.options.type + ';cat=' + self.options.cat + ';ord=' + a + '?" width="1" height="1" frameborder="0"></iframe>');
+          $('body').append('<iframe src="https://' + self.options.src + 'fls.doubleclick.net/activity;src=' + self.options.src + ';type=' + self.options.type + ';cat=' + self.options.cat + ';ord=' + a + '?" width="1" height="1" frameborder="0"></iframe>');
           return (self.options.return_false) ? false : true ;
         }
       });
     });
   };
 
-  // A really lightweight plugin wrapper around the constructor, 
+  // A really lightweight plugin wrapper around the constructor,
   // preventing against multiple instantiations
   $.fn[pluginName] = function ( options ) {
     var $this = $(this);
